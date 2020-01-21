@@ -1,0 +1,19 @@
+$text-color: rgb(95, 60, 92);
+
+body {
+    text-align: center;
+}
+:global(.hello-sass) {
+    color: $text-color;
+    display: inline;
+    text-align: center;
+    padding: 2%;
+    font-family: 'Courier New', Courier, monospace;
+}
+.styleReact {
+    color: red;
+}
+img {
+    width: 300px;
+    margin: 20px auto;
+}
