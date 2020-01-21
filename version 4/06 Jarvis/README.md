@@ -29,3 +29,26 @@
 
 #Imagemin
 
+##Instalación:
+
+`npm install imagemin-webpack-plugin`
+
+##Configuración:
+
+En nuestro archivo webpack para producción **prod.webpack.config.js** añadimos el siguiente código. Hay que asegurarse de que el plugin está detrás de cualquier plugin que añada imágenes.
+
+`
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+
+module.exports = {
+  plugins: [    
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      pngquant: {
+        quality: '20-50'
+      }
+    })
+  ]
+}
+`
+Para más información: https://github.com/Klathmon/imagemin-webpack-plugin

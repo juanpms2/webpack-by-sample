@@ -2,6 +2,8 @@ const merge = require('webpack-merge');
 const base = require('./base.webpack.config.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+
 
 module.exports = merge(base, {
   mode: 'production',
@@ -50,5 +52,11 @@ module.exports = merge(base, {
       threshold: 1024,
       minRatio: 0.8,
     }),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      pngquant: {
+        quality: '20-50'
+      }
+    })
   ],
 });
