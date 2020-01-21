@@ -27,7 +27,7 @@
  Para más información: https://github.com/zouhir/jarvis
 
 
-#Imagemin
+# Imagemin
 
 ## Instalación:
 
